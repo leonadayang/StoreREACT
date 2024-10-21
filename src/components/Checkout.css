@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.checkout-container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px 0px 10px 0px;
+    font-family: 'Poppins', sans-serif;
+    color: #125c5f;
+}
+.checkout-label {
+    font-weight: 600;
+    margin: 0px;
+    color: #125c5f;
+    padding: 0px 0px 5px 0px;
+}
+.ant-table {
+    height: 320px;
+}
+.ant-table-thead > tr > th, 
+.ant-table-tbody > tr > td {
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+    color: #212121 !important;
+}
+.checkout-column {
+    font-size: small;
+}
+.computation {
+    text-align: left;
+    text-indent: 15px;
+    font-size: small;
+    font-family: 'Poppins', sans-serif;
+}
+.total {
+    font-size: medium;
+    text-align: left;
+    text-indent: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+.order-container {
+    padding-top: 20px;
+}
+.order-button {
+    background-color: #319687;
+    color: #f0ffff;
+    font-size: large;
+    font-weight: 600;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.order-button:hover {
+    color: #125c5f;
+    background-color: #f0ffff;
+    border-color: #125c5f;
+}
+.order-button:active {
+    box-shadow: #125c5f;
+}
