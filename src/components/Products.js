@@ -113,12 +113,36 @@ const Products = () => {
           setIsAddModalOpen(false);
           message.success("Product successfully added.");
           getProducts(productType);
+          getAll();
         }
       })
       .catch((err) => {});
   };
 
   // const editProduct = () => {};
+
+  const deleteProduct = (record) => {
+
+    axios
+      .post(`http://localhost:8000/api/deleteStoreProduct`, {
+        // left backend, right react
+        pCode: record.pCode,
+        pName: record.pName,
+        pType: record.pType,
+        sCode: record.sCode,
+      })
+      .then((response) => {
+        if (response.data === "missing") {
+          message.error("Product does not exist.");
+        } else {
+          // clearData();
+          message.success("Product was deleted.");
+          getProducts(productType);
+          getAll();
+        }
+      })
+      .catch((err) => {});
+  };
 
   useEffect(() => {
     getProducts(productType);
@@ -377,13 +401,7 @@ const Products = () => {
                           description={
                             "Are you sure you want to delete this product?"
                           }
-                          // onConfirm={() => {
-                          //   if (record.isactive === "1") {
-                          //     confirmChangeStatus(record, 0);
-                          //   } else if (record.isactive === "0") {
-                          //     confirmChangeStatus(record, 1);
-                          //   }
-                          // }}
+                          onConfirm={() => {deleteProduct(record)}}
                           okText="Yes"
                           cancelText="No"
                         >
